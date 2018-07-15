@@ -58,6 +58,6 @@ impl Application for EchoApp {
 
 fn main() {
     static APP: EchoApp = EchoApp;
-    let addr = "127.0.0.1:46658".parse().unwrap();
+    let addr = "127.0.0.1:26658".parse().unwrap();
     server::new(addr, &APP);
 }

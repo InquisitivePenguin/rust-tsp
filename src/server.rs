@@ -76,7 +76,7 @@ impl Encoder for TSPCodec {
 
         writer.write(&varint).unwrap();
         writer.write(&msg_to_vec).unwrap();
-        writer.write(b"\x04\x1a\0").unwrap();
+        if !msg.has_flush() { writer.write(b"\x04\x1a\0").unwrap(); }
 
         Ok(())
     }
